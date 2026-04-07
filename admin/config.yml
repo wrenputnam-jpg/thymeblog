@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: wrenputnam-jpg/thymeblog
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "layout", widget: "hidden", default: "post" }
+      - { name: "body", label: "Content", widget: "markdown" }
